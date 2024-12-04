@@ -18,7 +18,7 @@ function Home() {
     const fetchBlogs = async () => {
       setLoading(true);
       try {
-        const response = await axios.get('http://localhost:5000/api/blogs', {
+        const response = await axios.get('https://snaplife-backend.onrender.com/api/blogs', {
           headers: { Authorization: `Bearer ${token}` },
         });
         const blogsData = response.data;

@@ -21,7 +21,7 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/register', formData);
+      const response = await axios.post('https://snaplife-backend.onrender.com/api/auth/register', formData);
       login(response.data);
       navigate('/');
     } catch (err) {

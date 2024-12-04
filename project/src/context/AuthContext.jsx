@@ -20,7 +20,7 @@ export function AuthProvider({ children }) {
           // Set default authorization header
           axios.defaults.headers.common['Authorization'] = `Bearer ${storedToken}`;
           
-          const response = await axios.get('http://localhost:5000/api/auth/me');
+          const response = await axios.get('https://snaplife-backend.onrender.com/api/auth/me');
           setUser(response.data);
           setToken(storedToken);
         } catch (error) {

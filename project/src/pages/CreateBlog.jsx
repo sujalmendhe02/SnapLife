@@ -34,7 +34,7 @@ function CreateBlog() {
       const token = localStorage.getItem('token');
       const tagsArray = formData.tags.split(',').map(tag => tag.trim()).filter(tag => tag);
       
-      await axios.post('http://localhost:5000/api/blogs', {
+      await axios.post('https://snaplife-backend.onrender.com/api/blogs', {
         ...formData,
         tags: tagsArray,
       }, {

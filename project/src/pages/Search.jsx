@@ -17,7 +17,7 @@ function Search() {
       
       setLoading(true);
       try {
-        const response = await axios.get(`http://localhost:5000/api/blogs/search?query=${encodeURIComponent(query)}`, {
+        const response = await axios.get(`https://snaplife-backend.onrender.com/api/blogs/search?query=${encodeURIComponent(query)}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         setResults(response.data);

@@ -17,7 +17,7 @@ function BlogDetail() {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/blogs/${id}`, {
+        const response = await axios.get(`https://snaplife-backend.onrender.com/api/blogs/${id}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         setBlog(response.data);
@@ -35,7 +35,7 @@ function BlogDetail() {
     if (!window.confirm('Are you sure you want to delete this blog?')) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/blogs/${id}`, {
+      await axios.delete(`https://snaplife-backend.onrender.com/api/blogs/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       navigate('/');
@@ -47,7 +47,7 @@ function BlogDetail() {
   const handleReviewSubmit = async (reviewData) => {
     try {
       const response = await axios.post(
-        `http://localhost:5000/api/blogs/${id}/reviews`,
+        `https://snaplife-backend.onrender.com/api/blogs/${id}/reviews`,
         reviewData,
         {
           headers: { Authorization: `Bearer ${token}` }
@@ -62,7 +62,7 @@ function BlogDetail() {
   const handleReviewDelete = async (reviewId) => {
     try {
       const response = await axios.delete(
-        `http://localhost:5000/api/blogs/${id}/reviews/${reviewId}`,
+        `https://snaplife-backend.onrender.com/api/blogs/${id}/reviews/${reviewId}`,
         {
           headers: { Authorization: `Bearer ${token}` }
         }
@@ -76,7 +76,7 @@ function BlogDetail() {
   const handleReviewLike = async (reviewId) => {
     try {
       const response = await axios.post(
-        `http://localhost:5000/api/blogs/${id}/reviews/${reviewId}/like`,
+        `https://snaplife-backend.onrender.com/api/blogs/${id}/reviews/${reviewId}/like`,
         {},
         {
           headers: { Authorization: `Bearer ${token}` }

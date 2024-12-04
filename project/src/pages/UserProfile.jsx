@@ -19,8 +19,8 @@ function UserProfile() {
     const fetchUserData = async () => {
       try {
         const [userResponse, blogsResponse] = await Promise.all([
-          axios.get(`http://localhost:5000/api/auth/user/${id}`),
-          axios.get(`http://localhost:5000/api/blogs/user/${id}`)
+          axios.get(`https://snaplife-backend.onrender.com/api/auth/user/${id}`),
+          axios.get(`https://snaplife-backend.onrender.com/api/blogs/user/${id}`)
         ]);
 
         setUserData(userResponse.data);

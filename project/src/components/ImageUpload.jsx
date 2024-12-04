@@ -22,7 +22,7 @@ function ImageUpload({ onImagesUploaded, existingImages = [] }) {
     try {
       const token = localStorage.getItem('token');
       const response = await axios.post(
-        'http://localhost:5000/api/blogs/upload',
+        'https://snaplife-backend.onrender.com/api/blogs/upload',
         formData,
         {
           headers: {

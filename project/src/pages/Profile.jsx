@@ -32,7 +32,7 @@ function Profile() {
 
     const fetchUserBlogs = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/blogs/user/${user.id}`);
+        const response = await axios.get(`https://snaplife-backend.onrender.com/api/blogs/user/${user.id}`);
         setUserBlogs(response.data);
       } catch (err) {
         setError('Failed to fetch your blogs');
@@ -60,7 +60,7 @@ function Profile() {
       formData.append('images', file);
 
       const uploadResponse = await axios.post(
-        'http://localhost:5000/api/blogs/upload',
+        'https://snaplife-backend.onrender.com/api/blogs/upload',
         formData,
         {
           headers: {
@@ -73,7 +73,7 @@ function Profile() {
       
       // Update profile with new photo
       const updateResponse = await axios.put(
-        'http://localhost:5000/api/auth/profile',
+        'https://snaplife-backend.onrender.com/api/auth/profile',
         { ...profileData, profilePicture: imageUrl }
       );
 
@@ -95,7 +95,7 @@ function Profile() {
 
     try {
       const response = await axios.put(
-        'http://localhost:5000/api/auth/profile',
+        'https://snaplife-backend.onrender.com/api/auth/profile',
         profileData
       );
 
